@@ -1,0 +1,344 @@
+/*
+	Frameless			<http://framelessgrid.com/>
+	by Joni Korpi 		<http://jonikorpi.com/>
+	licensed under CC0	<http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+
+
+@import "css3";
+
+
+//
+// Configuration
+//
+
+$font-size: 16; 		// Your base font-size in pixels
+$line: 24;
+$em: $font-size / 1em;	// Shorthand for outputting ems
+
+$column: 48;	// The column-width of your grid in pixels
+$gutter: 24;	// The gutter-width of your grid in pixels
+
+
+//
+// Gutter-widths in variables, in ems
+//
+$gutter1: (1 * $gutter) / $em;
+
+
+//
+// Column-widths in variables, in ems
+//
+
+ $cols1: ( 1 * ($column + $gutter) - $gutter) / $em;
+ $cols2: ( 2 * ($column + $gutter) - $gutter) / $em;
+ $cols3: ( 3 * ($column + $gutter) - $gutter) / $em;
+ $cols4: ( 4 * ($column + $gutter) - $gutter) / $em;
+ $cols5: ( 5 * ($column + $gutter) - $gutter) / $em;
+ $cols6: ( 6 * ($column + $gutter) - $gutter) / $em;
+ $cols7: ( 7 * ($column + $gutter) - $gutter) / $em;
+ $cols8: ( 8 * ($column + $gutter) - $gutter) / $em;
+ $cols9: ( 9 * ($column + $gutter) - $gutter) / $em;
+$cols10: (10 * ($column + $gutter) - $gutter) / $em;
+$cols11: (11 * ($column + $gutter) - $gutter) / $em;
+$cols12: (12 * ($column + $gutter) - $gutter) / $em;
+$cols13: (13 * ($column + $gutter) - $gutter) / $em;
+$cols14: (14 * ($column + $gutter) - $gutter) / $em;
+$cols15: (15 * ($column + $gutter) - $gutter) / $em;
+$cols16: (16 * ($column + $gutter) - $gutter) / $em;
+$cols17: (17 * ($column + $gutter) - $gutter) / $em;
+$cols18: (18 * ($column + $gutter) - $gutter) / $em;
+$cols19: (19 * ($column + $gutter) - $gutter) / $em;
+$cols20: (20 * ($column + $gutter) - $gutter) / $em;
+$cols21: (21 * ($column + $gutter) - $gutter) / $em;
+$cols22: (22 * ($column + $gutter) - $gutter) / $em;
+$cols23: (23 * ($column + $gutter) - $gutter) / $em;
+$cols24: (24 * ($column + $gutter) - $gutter) / $em;
+$cols25: (25 * ($column + $gutter) - $gutter) / $em;
+$cols26: (26 * ($column + $gutter) - $gutter) / $em;
+
+
+//
+// Column-widths in a function, in ems
+//
+
+@mixin width ($cols:1) {
+	width: ($cols * ($column + $gutter) - $gutter) / $em;
+}
+
+
+/*
+	Margin, padding, and border resets
+	except for form elements
+*/
+
+body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+
+/*
+	Consistency fixes
+	adopted from http://necolas.github.com/normalize.css/
+*/
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, nav, section, audio, canvas, video {
+	display: block;
+}
+
+html {
+	height: 100%; 
+	-webkit-text-size-adjust: 100%; 
+	-ms-text-size-adjust: 100%;
+}
+
+body {min-height: 100%; font-size: 100%;}
+
+sub, sup {
+	font-size: 75%; 
+	line-height: 0; 
+	position: relative; 
+	vertical-align: baseline;
+}
+
+	sup {top: -0.5em;}
+	sub {bottom: -0.25em;}
+
+pre {
+	white-space: pre; 
+	white-space: pre-wrap; 
+	word-wrap: break-word;
+}
+
+b, strong {font-weight: bold;}
+abbr[title] {border-bottom: 1px dotted;}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a img, img {
+	-ms-interpolation-mode: bicubic;
+	border: 0;
+}
+
+input, textarea, button, select {
+	margin: 0;
+	font-size: 100%;
+	line-height: normal;
+	vertical-align: baseline;
+}
+
+button,
+html input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		 -o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+textarea {overflow: auto;}
+
+
+/*
+	These are easy to forget
+*/
+
+::selection {
+	background: red;
+	color: white;
+}
+::-moz-selection {
+	background: red;
+	color: white;
+}
+
+img::selection {
+	background: transparent;
+}
+img::-moz-selection {
+	background: transparent;
+}
+
+body {
+	-webkit-tap-highlight-color: rgba(255,0,0, 0.62);
+}
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+@mixin clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.clearfix { @include clearfix(); }
+
+body {
+  font-size: $font-size / 16 * 1em;
+  line-height: $line / $em;
+  font-family: futura-pt, Futura, "Trebuchet MS", sans-serif;
+  text-align: left;
+  margin: $gutter1 0;
+}
+
+// Default Size (width 1024px)
+// ---------------------------
+#header, #example-grid, #container {
+  width: $cols12;
+  padding: $gutter1;
+  margin: 0 auto;
+  @include clearfix();
+}
+
+#example-grid {  
+  color: white;  
+  @include transition(opacity .3s);
+  @include opacity(.7);
+  
+  .row {
+    margin-left: -$gutter1;
+    overflow: hidden;
+    height: $cols3;
+    @include clearfix();  
+  }
+  
+  .col {
+    float: left;
+    width: $cols1;
+    height: $cols3;
+    line-height: $cols3;
+    text-align: center;
+    background: none #542560;    
+    margin-left: $gutter1;
+  }
+  
+  &:hover {
+    @include opacity(1);
+  }
+}
+
+#header {
+  background: #d7d7d7;
+  
+  .logo {
+    height: $cols1;
+    line-height: $cols1;
+    background: #b1b1b1;
+    width: $cols4;
+    text-align: center;
+  }
+  
+  #nav {
+    float: right;
+    
+    ul {
+      list-style: none;
+      margin-left: -$gutter1;
+      
+      li {
+        float: left; 
+        margin-left: $gutter1;
+        
+        a {
+          display: block;
+          height: $cols1;
+          line-height: $cols1; 
+          width: $cols1;
+          text-decoration: none;
+          background: none white;
+          color: #542560;
+          text-align: center;
+          @include transition(background .3s, color .3s);
+          
+          &:hover{
+            background: none #542560;
+            color: white;
+          }
+        }        
+      }
+      
+    }
+    
+  }
+}
+
+#container {
+  .content {
+    width: $cols8;
+    float: left;
+    margin-top: -$gutter1;
+    
+    section {
+      border: 1px dotted #d7d7d7;
+      padding: $gutter1;
+      margin-top: $gutter1;
+      @include clearfix(); 
+    }
+  }
+  
+  .right-side {
+    @extend .content;
+    float: right;
+    width: $cols4!important;
+  }
+}
+
+
+/*
+	Style overrides for IE6-8
+	http://jonikorpi.com/leaving-old-IE-behind/
+*/
+
+.ie {
+	
+}
+
+
+/*
+	An easy way to zoom your entire layout in or out (as long as it's set in ems).
+	Just change the media queries to activate them.
+	Assuming your base font-size is 16:
+	- the first one zooms out by a factor of (16-2)/16 = 0.875
+	- the second one zooms in by a factor of (16+2)/16 = 1.125  
+*/
+
+@media (min-width: 1280px) {    
+  #header, #example-grid, #container {
+    width: $cols18;
+  }
+  
+  #container .content { width: $cols14; }
+}
+
+@media (min-width: 1900px) {    
+  #header, #example-grid, #container {
+    width: $cols26;
+  }
+  
+  #container .content { width: $cols22; }
+}

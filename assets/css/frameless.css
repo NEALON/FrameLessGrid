@@ -1,0 +1,292 @@
+/*
+	Frameless			<http://framelessgrid.com/>
+	by Joni Korpi 		<http://jonikorpi.com/>
+	licensed under CC0	<http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/*
+	Margin, padding, and border resets
+	except for form elements
+*/
+body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*
+	Consistency fixes
+	adopted from http://necolas.github.com/normalize.css/
+*/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, nav, section, audio, canvas, video {
+  display: block;
+}
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-size: 100%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a img, img {
+  -ms-interpolation-mode: bicubic;
+  border: 0;
+}
+
+input, textarea, button, select {
+  margin: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: baseline;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+textarea {
+  overflow: auto;
+}
+
+/*
+	These are easy to forget
+*/
+::selection {
+  background: red;
+  color: white;
+}
+
+::-moz-selection {
+  background: red;
+  color: white;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+body {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62);
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.5em;
+  font-family: futura-pt, Futura, "Trebuchet MS", sans-serif;
+  text-align: left;
+  margin: 1.5em 0;
+}
+
+#header, #example-grid, #container {
+  width: 52.5em;
+  padding: 1.5em;
+  margin: 0 auto;
+  *zoom: 1;
+}
+#header:before, #header:after, #example-grid:before, #example-grid:after, #container:before, #container:after {
+  display: table;
+  content: "";
+}
+#header:after, #example-grid:after, #container:after {
+  clear: both;
+}
+
+#example-grid {
+  color: white;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+#example-grid .row {
+  margin-left: -1.5em;
+  overflow: hidden;
+  height: 12em;
+  *zoom: 1;
+}
+#example-grid .row:before, #example-grid .row:after {
+  display: table;
+  content: "";
+}
+#example-grid .row:after {
+  clear: both;
+}
+#example-grid .col {
+  float: left;
+  width: 3em;
+  height: 12em;
+  line-height: 12em;
+  text-align: center;
+  background: none #542560;
+  margin-left: 1.5em;
+}
+#example-grid:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+#header {
+  background: #d7d7d7;
+}
+#header .logo {
+  height: 3em;
+  line-height: 3em;
+  background: #b1b1b1;
+  width: 16.5em;
+  text-align: center;
+}
+#header #nav {
+  float: right;
+}
+#header #nav ul {
+  list-style: none;
+  margin-left: -1.5em;
+}
+#header #nav ul li {
+  float: left;
+  margin-left: 1.5em;
+}
+#header #nav ul li a {
+  display: block;
+  height: 3em;
+  line-height: 3em;
+  width: 3em;
+  text-decoration: none;
+  background: none white;
+  color: #542560;
+  text-align: center;
+  -webkit-transition: background 0.3s, color 0.3s;
+  -moz-transition: background 0.3s, color 0.3s;
+  -o-transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
+}
+#header #nav ul li a:hover {
+  background: none #542560;
+  color: white;
+}
+
+#container .content, #container .right-side {
+  width: 34.5em;
+  float: left;
+  margin-top: -1.5em;
+}
+#container .content section, #container .right-side section {
+  border: 1px dotted #d7d7d7;
+  padding: 1.5em;
+  margin-top: 1.5em;
+  *zoom: 1;
+}
+#container .content section:before, #container .right-side section:before, #container .content section:after, #container .right-side section:after {
+  display: table;
+  content: "";
+}
+#container .content section:after, #container .right-side section:after {
+  clear: both;
+}
+#container .right-side {
+  float: right;
+  width: 16.5em !important;
+}
+
+/*
+	Style overrides for IE6-8
+	http://jonikorpi.com/leaving-old-IE-behind/
+*/
+/*
+	An easy way to zoom your entire layout in or out (as long as it's set in ems).
+	Just change the media queries to activate them.
+	Assuming your base font-size is 16:
+	- the first one zooms out by a factor of (16-2)/16 = 0.875
+	- the second one zooms in by a factor of (16+2)/16 = 1.125  
+*/
+@media (min-width: 1280px) {
+  #header, #example-grid, #container {
+    width: 79.5em;
+  }
+
+  #container .content, #container .right-side {
+    width: 61.5em;
+  }
+}
+@media (min-width: 1900px) {
+  #header, #example-grid, #container {
+    width: 115.5em;
+  }
+
+  #container .content, #container .right-side {
+    width: 97.5em;
+  }
+}
